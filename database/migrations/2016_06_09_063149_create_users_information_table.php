@@ -17,9 +17,6 @@ class CreateUsersInformationTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('address');
-            $table->string('dob');
-            $table->string('marital_status');
-            $table->string('phone_no');
             $table->timestamps();
         });
     }

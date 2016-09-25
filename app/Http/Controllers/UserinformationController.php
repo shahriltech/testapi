@@ -13,11 +13,20 @@ class UserinformationController extends Controller
     	return view('create');
     }
 
-    public function show(){
-    	$userinfo = User_information::all();
+    public function show()
+    {
+        $userinfo = User_information::orderBy('id','ASC')->paginate(20);
 
-    	return view('show',array('userinfo'=>$userinfo));
+         return response()->json([
+                 'userinfo' => $userinfo,
+             
+            ]); //return this shit into JSON format .. also can apply LUMEN API or JWT (proper way for API dev)
+
+        // return view('show', [
+        //         'userinfo' => $userinfo,
+        //     ]); // view into normal interface
     }
+
     public function save(Request $request){
     	$userinfo = new User_information;
 

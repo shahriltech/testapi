@@ -36,7 +36,9 @@
 
 	@endforeach
 </table>
-		<!-- Modal -->
+	{{ $userinfo->links() }} 
+		<!-- pagination -->
+	}
 <div class="modal fade" id="confirm-delete" role="dialog">
     <div class="modal-dialog">
     
